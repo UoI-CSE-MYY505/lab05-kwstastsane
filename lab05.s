@@ -67,6 +67,16 @@ taken:
 # ----------------------------------------------------------------------------------------
 # TODO: Add an example where an instruction passes its result to the 2nd following instruction
 # There should be no stalls
+
+    # prowthhsh apotelesmatos se methepomenh entolh
+    add  t1, s4, s4 # t1 = s4 + s4 
+    add  zero, zero, zero # nop xronikh kathisterisi
+    add  t2, t1, s0 # t2 = t1 + s0
+
+
+	
+
+
 # ----------------------------------------------------------------------------------------
     # nop instructions added between examples
     add  zero, zero, zero  
@@ -78,6 +88,13 @@ taken:
 # A double hazzard is when the source register of an instruction matches the destination
 #  registers of both of the two instructions preceeding it. It should get the newest value.
 # There should be no stalls
+    
+    # diplos kindunos 
+    
+    add t1, s1, s1 # t1 = s1 + s1
+    add t2, t1, s0 # t2 = t1 + s0
+    add t3, t1, s3 # anamenetai h pio prosfath timh t1
+
 # ----------------------------------------------------------------------------------------
     # nop instructions added between examples
     add  zero, zero, zero  
@@ -88,6 +105,11 @@ taken:
 # TODO: Add an example with a load stalling for 1 cycle to pass a value to a NOT-TAKEN branch 
 #  Is this a data hazard or a control hazard?
 # ----------------------------------------------------------------------------------------
+      
+    # load me diakladwsh
+   
+    lw t3, 4(a0) # fortwsh deuterou stoixeiou ston t3 
+    beq t3, zero, next # an t3==0 tote false  
     # nop instructions added between examples
     add  zero, zero, zero  
     add  zero, zero, zero  
@@ -96,6 +118,16 @@ taken:
 # ----------------------------------------------------------------------------------------
 # TODO: Add an example with taken branch to a label which is immediately following the branch
 # ----------------------------------------------------------------------------------------
+   #diakladwsh
+
+   j next1  # phgaine next1
+
+next1:
+   
+   add zero, zero, zero # nop
+   add zero, zero, zero 
+   add zero, zero, zero 
+   
 
 
 
